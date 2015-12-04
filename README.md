@@ -44,6 +44,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 - the application is designed to work on 4" display, but can work on larger displays
 - the hardest part was understanding how to pass the billing amount through view controllers
+- I know the code is a little repitive and I will be fixing that in the coming days
 
 ## License
 
