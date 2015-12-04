@@ -11,7 +11,7 @@ import UIKit
 class TipByRatingViewController: UIViewController {
     
     let defaultUserData = NSUserDefaults.standardUserDefaults()
-
+    
     @IBOutlet weak var BillAmountTextField: UITextField!
     @IBOutlet weak var RatingSegmentedControl: UISegmentedControl!
     @IBOutlet weak var SatisfactoryEmoji: UILabel!
@@ -41,10 +41,11 @@ class TipByRatingViewController: UIViewController {
         RecieptTotalAmount.text = String(Double(0).asLocaleCurrency)
         RecieptTotalAmount.text = String(Double(0).asLocaleCurrency) + "/1 person"
         
-        let currentDefaultStar = defaultUserData.integerForKey("DefaultStarRating") as Int?
+        let currentDefaultStar = defaultUserData.objectForKey("DefaultStarRating") as! Int?
         if(currentDefaultStar != nil){
             RatingSegmentedControl.selectedSegmentIndex = currentDefaultStar! - 1
         } else {
+            RatingSegmentedControl.selectedSegmentIndex = 2
             defaultUserData.setInteger(3, forKey: "DefaultStarRating")
             defaultUserData.synchronize()
         }

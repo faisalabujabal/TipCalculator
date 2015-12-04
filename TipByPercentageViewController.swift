@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TipByPercentageViewController.swift
 //  TipCalculator
 //
 //  Created by Faisal Abu Jabal on 12/1/15.
@@ -20,7 +20,7 @@ extension Double {
 class TipByPercentageViewController: UIViewController {
     
     var passedBillAmount: String? = nil
-
+    
     @IBOutlet weak var BillAmountValue: UITextField!
     @IBOutlet weak var PercentageAmountValue: UITextField!
     @IBOutlet weak var satisfactoryEmoji: UILabel!
@@ -44,41 +44,6 @@ class TipByPercentageViewController: UIViewController {
         SwipeDownToDismissLabel.alpha = 0
         BillAmountValue.becomeFirstResponder()
         
-        if(passedBillAmount != nil){
-            BillAmountValue.text = passedBillAmount
-            BillAmountValue.placeholder = passedBillAmount
-            updateReceipt()
-        } else {
-            BillAmountValue.text = String(Double(0).asLocaleCurrency)
-            BillAmountValue.placeholder = String(Double(0).asLocaleCurrency)
-        }
-        recieptBillAmountValue.text = String(Double(0).asLocaleCurrency)
-        recieptTipAmountValue.text = String(Double(0).asLocaleCurrency)
-        recieptTotalAmountValue.text = String(Double(0).asLocaleCurrency) + "/1 person"
-        
-        let minimumSliderTip = defaultUserData.doubleForKey("DefaultMinimumTipSlider") as Double?
-        if(minimumSliderTip == nil){
-            tipPercentageSlider.minimumValue = 5
-        } else {
-            tipPercentageSlider.minimumValue = Float(minimumSliderTip!)
-        }
-        
-        let maximumSliderTip = defaultUserData.doubleForKey("DefaultMaximumTipSlider") as Double?
-        if(maximumSliderTip == nil){
-            tipPercentageSlider.maximumValue = 30
-        } else {
-            tipPercentageSlider.maximumValue = Float(maximumSliderTip!)
-        }
-        
-        let defaultTip = defaultUserData.doubleForKey("DefaultTipByPercentage") as Double?
-        if(defaultTip == nil){
-            setCurrentPercentage(18)
-        } else {
-            setCurrentPercentage(defaultTip!)
-            recieptTipAmountLabel.text = "Tip (" + String(Int(defaultTip!)) + "%):"
-            updateSatisfactoryEmoji()
-        }
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         
@@ -92,20 +57,25 @@ class TipByPercentageViewController: UIViewController {
             BillAmountValue.placeholder = passedBillAmount
         }
         
-        PercentageAmountValue.text = String(Int(defaultUserData.doubleForKey("DefaultTipByPercentage"))) + "%"
-        PercentageAmountValue.placeholder = String(Int(defaultUserData.doubleForKey("DefaultTipByPercentage"))) + "%"
-        tipPercentageSlider.value = Float(defaultUserData.doubleForKey("DefaultTipByPercentage"))
-        updateReceipt()
-        updateSatisfactoryEmoji()
+        recieptBillAmountValue.text = String(Double(0).asLocaleCurrency)
+        recieptTipAmountValue.text = String(Double(0).asLocaleCurrency)
+        recieptTotalAmountValue.text = String(Double(0).asLocaleCurrency) + "/1 person"
         
-        let minimumSliderTip = defaultUserData.doubleForKey("DefaultMinimumTipSlider") as Double?
+        let defaultTip = defaultUserData.objectForKey("DefaultTipByPercentage") as! Double?
+        if(defaultTip == nil){
+            setCurrentPercentage(18)
+        } else {
+            setCurrentPercentage(defaultTip!)
+        }
+        
+        let minimumSliderTip = defaultUserData.objectForKey("DefaultMinimumTipSlider") as! Double?
         if(minimumSliderTip == nil){
             tipPercentageSlider.minimumValue = 5
         } else {
             tipPercentageSlider.minimumValue = Float(minimumSliderTip!)
         }
         
-        let maximumSliderTip = defaultUserData.doubleForKey("DefaultMaximumTipSlider") as Double?
+        let maximumSliderTip = defaultUserData.objectForKey("DefaultMaximumTipSlider") as! Double?
         if(maximumSliderTip == nil){
             tipPercentageSlider.maximumValue = 30
         } else {
@@ -122,7 +92,7 @@ class TipByPercentageViewController: UIViewController {
         SwipeDownToDismissImage.alpha = 0
         SwipeDownToDismissLabel.alpha = 0
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -190,6 +160,8 @@ class TipByPercentageViewController: UIViewController {
         PercentageAmountValue.text = String(Int(currentPercentage)) + "%"
         PercentageAmountValue.placeholder = String(Int(currentPercentage)) + "%"
         tipPercentageSlider.value = Float(currentPercentage)
+        recieptTipAmountLabel.text = "Tip (" + String(Int(currentPercentage)) + "%):"
+        updateSatisfactoryEmoji()
     }
     
     // this is a helper function that updates the values of the
