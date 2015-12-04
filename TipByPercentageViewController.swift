@@ -96,6 +96,7 @@ class TipByPercentageViewController: UIViewController {
         PercentageAmountValue.placeholder = String(Int(defaultUserData.doubleForKey("DefaultTipByPercentage"))) + "%"
         tipPercentageSlider.value = Float(defaultUserData.doubleForKey("DefaultTipByPercentage"))
         updateReceipt()
+        updateSatisfactoryEmoji()
         
         let minimumSliderTip = defaultUserData.doubleForKey("DefaultMinimumTipSlider") as Double?
         if(minimumSliderTip == nil){

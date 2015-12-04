@@ -7,43 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A3CBF2E1C119F1F006E6D88 /* 1-stars-46x11.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3CBF251C119F1F006E6D88 /* 1-stars-46x11.png */; };
+		3A3CBF2F1C119F1F006E6D88 /* 2-stars-46x11.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3CBF261C119F1F006E6D88 /* 2-stars-46x11.png */; };
+		3A3CBF301C119F1F006E6D88 /* 3-stars-46x11.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3CBF271C119F1F006E6D88 /* 3-stars-46x11.png */; };
+		3A3CBF311C119F1F006E6D88 /* 4-stars-46x11.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3CBF281C119F1F006E6D88 /* 4-stars-46x11.png */; };
+		3A3CBF321C119F1F006E6D88 /* 5-stars-60x11.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3CBF291C119F1F006E6D88 /* 5-stars-60x11.png */; };
+		3A3CBF331C119F1F006E6D88 /* downArrow-grey-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3CBF2A1C119F1F006E6D88 /* downArrow-grey-20.png */; };
+		3A3CBF341C119F1F006E6D88 /* percentage-sign-grey-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3CBF2B1C119F1F006E6D88 /* percentage-sign-grey-20.png */; };
+		3A3CBF351C119F1F006E6D88 /* settings-icon-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3CBF2C1C119F1F006E6D88 /* settings-icon-20.png */; };
+		3A3CBF361C119F1F006E6D88 /* star-grey-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3CBF2D1C119F1F006E6D88 /* star-grey-20.png */; };
 		3A7D6AB11C0D7E470081EA86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D6AB01C0D7E470081EA86 /* AppDelegate.swift */; };
 		3A7D6AB31C0D7E470081EA86 /* TipByPercentageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D6AB21C0D7E470081EA86 /* TipByPercentageViewController.swift */; };
-		3A7D6AB61C0D7E480081EA86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D6AB41C0D7E480081EA86 /* Main.storyboard */; };
 		3A7D6AB81C0D7E480081EA86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D6AB71C0D7E480081EA86 /* Assets.xcassets */; };
 		3A7D6AD01C0FB9F50081EA86 /* TipByRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D6ACF1C0FB9F50081EA86 /* TipByRatingViewController.swift */; };
 		3A7D6AD41C0FC6EF0081EA86 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D6AD31C0FC6EF0081EA86 /* SettingsViewController.swift */; };
 		3A7D6AEC1C1173B70081EA86 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D6AEB1C1173B70081EA86 /* TabBarController.swift */; };
-		3A7D6AF81C1183DA0081EA86 /* 1-stars-46x11.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D6AEF1C1183DA0081EA86 /* 1-stars-46x11.png */; };
-		3A7D6AF91C1183DA0081EA86 /* 2-stars-46x11.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D6AF01C1183DA0081EA86 /* 2-stars-46x11.png */; };
-		3A7D6AFA1C1183DA0081EA86 /* 3-stars-46x11.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D6AF11C1183DA0081EA86 /* 3-stars-46x11.png */; };
-		3A7D6AFB1C1183DA0081EA86 /* 4-stars-46x11.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D6AF21C1183DA0081EA86 /* 4-stars-46x11.png */; };
-		3A7D6AFC1C1183DA0081EA86 /* 5-stars-60x11.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D6AF31C1183DA0081EA86 /* 5-stars-60x11.png */; };
-		3A7D6AFD1C1183DA0081EA86 /* downArrow-grey-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D6AF41C1183DA0081EA86 /* downArrow-grey-20.png */; };
-		3A7D6AFE1C1183DA0081EA86 /* percentage-sign-grey-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D6AF51C1183DA0081EA86 /* percentage-sign-grey-20.png */; };
-		3A7D6AFF1C1183DA0081EA86 /* settings-icon-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D6AF61C1183DA0081EA86 /* settings-icon-20.png */; };
-		3A7D6B001C1183DA0081EA86 /* star-grey-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7D6AF71C1183DA0081EA86 /* star-grey-20.png */; };
+		3AA1A7AB1C11A1FE005F11B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1A7A91C11A1FE005F11B2 /* Main.storyboard */; };
+		3AA1A7AD1C11A220005F11B2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1A7AC1C11A220005F11B2 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A3CBF251C119F1F006E6D88 /* 1-stars-46x11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1-stars-46x11.png"; path = "Images/1-stars-46x11.png"; sourceTree = SOURCE_ROOT; };
+		3A3CBF261C119F1F006E6D88 /* 2-stars-46x11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "2-stars-46x11.png"; path = "Images/2-stars-46x11.png"; sourceTree = SOURCE_ROOT; };
+		3A3CBF271C119F1F006E6D88 /* 3-stars-46x11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "3-stars-46x11.png"; path = "Images/3-stars-46x11.png"; sourceTree = SOURCE_ROOT; };
+		3A3CBF281C119F1F006E6D88 /* 4-stars-46x11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "4-stars-46x11.png"; path = "Images/4-stars-46x11.png"; sourceTree = SOURCE_ROOT; };
+		3A3CBF291C119F1F006E6D88 /* 5-stars-60x11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "5-stars-60x11.png"; path = "Images/5-stars-60x11.png"; sourceTree = SOURCE_ROOT; };
+		3A3CBF2A1C119F1F006E6D88 /* downArrow-grey-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "downArrow-grey-20.png"; path = "Images/downArrow-grey-20.png"; sourceTree = SOURCE_ROOT; };
+		3A3CBF2B1C119F1F006E6D88 /* percentage-sign-grey-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "percentage-sign-grey-20.png"; path = "Images/percentage-sign-grey-20.png"; sourceTree = SOURCE_ROOT; };
+		3A3CBF2C1C119F1F006E6D88 /* settings-icon-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-icon-20.png"; path = "Images/settings-icon-20.png"; sourceTree = SOURCE_ROOT; };
+		3A3CBF2D1C119F1F006E6D88 /* star-grey-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-grey-20.png"; path = "Images/star-grey-20.png"; sourceTree = SOURCE_ROOT; };
 		3A7D6AAD1C0D7E470081EA86 /* Tip Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tip Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7D6AB01C0D7E470081EA86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A7D6AB21C0D7E470081EA86 /* TipByPercentageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipByPercentageViewController.swift; sourceTree = "<group>"; };
-		3A7D6AB51C0D7E480081EA86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A7D6AB71C0D7E480081EA86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3A7D6ABC1C0D7E480081EA86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A7D6ACF1C0FB9F50081EA86 /* TipByRatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipByRatingViewController.swift; sourceTree = "<group>"; };
 		3A7D6AD31C0FC6EF0081EA86 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		3A7D6AEB1C1173B70081EA86 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		3A7D6AEF1C1183DA0081EA86 /* 1-stars-46x11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1-stars-46x11.png"; path = "Images/1-stars-46x11.png"; sourceTree = "<group>"; };
-		3A7D6AF01C1183DA0081EA86 /* 2-stars-46x11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "2-stars-46x11.png"; path = "Images/2-stars-46x11.png"; sourceTree = "<group>"; };
-		3A7D6AF11C1183DA0081EA86 /* 3-stars-46x11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "3-stars-46x11.png"; path = "Images/3-stars-46x11.png"; sourceTree = "<group>"; };
-		3A7D6AF21C1183DA0081EA86 /* 4-stars-46x11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "4-stars-46x11.png"; path = "Images/4-stars-46x11.png"; sourceTree = "<group>"; };
-		3A7D6AF31C1183DA0081EA86 /* 5-stars-60x11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "5-stars-60x11.png"; path = "Images/5-stars-60x11.png"; sourceTree = "<group>"; };
-		3A7D6AF41C1183DA0081EA86 /* downArrow-grey-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "downArrow-grey-20.png"; path = "Images/downArrow-grey-20.png"; sourceTree = "<group>"; };
-		3A7D6AF51C1183DA0081EA86 /* percentage-sign-grey-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "percentage-sign-grey-20.png"; path = "Images/percentage-sign-grey-20.png"; sourceTree = "<group>"; };
-		3A7D6AF61C1183DA0081EA86 /* settings-icon-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-icon-20.png"; path = "Images/settings-icon-20.png"; sourceTree = "<group>"; };
-		3A7D6AF71C1183DA0081EA86 /* star-grey-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-grey-20.png"; path = "Images/star-grey-20.png"; sourceTree = "<group>"; };
+		3A7D6AEB1C1173B70081EA86 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = SOURCE_ROOT; };
+		3AA1A7AA1C11A1FE005F11B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3AA1A7AC1C11A220005F11B2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +61,15 @@
 		3A7D6AA41C0D7E470081EA86 = {
 			isa = PBXGroup;
 			children = (
-				3A7D6AAF1C0D7E470081EA86 /* TipCalculator */,
+				3AA1A7AC1C11A220005F11B2 /* Info.plist */,
+				3AA1A7A91C11A1FE005F11B2 /* Main.storyboard */,
+				3A7D6AEB1C1173B70081EA86 /* TabBarController.swift */,
+				3A7D6AB01C0D7E470081EA86 /* AppDelegate.swift */,
+				3A7D6AC21C0EBEC80081EA86 /* Images */,
+				3A7D6AB21C0D7E470081EA86 /* TipByPercentageViewController.swift */,
+				3A7D6ACF1C0FB9F50081EA86 /* TipByRatingViewController.swift */,
+				3A7D6AD31C0FC6EF0081EA86 /* SettingsViewController.swift */,
+				3A7D6AB71C0D7E480081EA86 /* Assets.xcassets */,
 				3A7D6AAE1C0D7E470081EA86 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,37 +82,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3A7D6AAF1C0D7E470081EA86 /* TipCalculator */ = {
-			isa = PBXGroup;
-			children = (
-				3A7D6AB41C0D7E480081EA86 /* Main.storyboard */,
-				3A7D6AEB1C1173B70081EA86 /* TabBarController.swift */,
-				3A7D6AB01C0D7E470081EA86 /* AppDelegate.swift */,
-				3A7D6AC21C0EBEC80081EA86 /* Images */,
-				3A7D6AB21C0D7E470081EA86 /* TipByPercentageViewController.swift */,
-				3A7D6ACF1C0FB9F50081EA86 /* TipByRatingViewController.swift */,
-				3A7D6AD31C0FC6EF0081EA86 /* SettingsViewController.swift */,
-				3A7D6ABC1C0D7E480081EA86 /* Info.plist */,
-				3A7D6AB71C0D7E480081EA86 /* Assets.xcassets */,
-			);
-			name = TipCalculator;
-			path = FirstTipCalculator;
-			sourceTree = "<group>";
-		};
 		3A7D6AC21C0EBEC80081EA86 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3A7D6AEF1C1183DA0081EA86 /* 1-stars-46x11.png */,
-				3A7D6AF01C1183DA0081EA86 /* 2-stars-46x11.png */,
-				3A7D6AF11C1183DA0081EA86 /* 3-stars-46x11.png */,
-				3A7D6AF21C1183DA0081EA86 /* 4-stars-46x11.png */,
-				3A7D6AF31C1183DA0081EA86 /* 5-stars-60x11.png */,
-				3A7D6AF41C1183DA0081EA86 /* downArrow-grey-20.png */,
-				3A7D6AF51C1183DA0081EA86 /* percentage-sign-grey-20.png */,
-				3A7D6AF61C1183DA0081EA86 /* settings-icon-20.png */,
-				3A7D6AF71C1183DA0081EA86 /* star-grey-20.png */,
+				3A3CBF251C119F1F006E6D88 /* 1-stars-46x11.png */,
+				3A3CBF261C119F1F006E6D88 /* 2-stars-46x11.png */,
+				3A3CBF271C119F1F006E6D88 /* 3-stars-46x11.png */,
+				3A3CBF281C119F1F006E6D88 /* 4-stars-46x11.png */,
+				3A3CBF291C119F1F006E6D88 /* 5-stars-60x11.png */,
+				3A3CBF2A1C119F1F006E6D88 /* downArrow-grey-20.png */,
+				3A3CBF2B1C119F1F006E6D88 /* percentage-sign-grey-20.png */,
+				3A3CBF2C1C119F1F006E6D88 /* settings-icon-20.png */,
+				3A3CBF2D1C119F1F006E6D88 /* star-grey-20.png */,
 			);
-			name = Images;
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,17 +157,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A7D6AFE1C1183DA0081EA86 /* percentage-sign-grey-20.png in Resources */,
-				3A7D6AF81C1183DA0081EA86 /* 1-stars-46x11.png in Resources */,
-				3A7D6AF91C1183DA0081EA86 /* 2-stars-46x11.png in Resources */,
-				3A7D6B001C1183DA0081EA86 /* star-grey-20.png in Resources */,
+				3A3CBF341C119F1F006E6D88 /* percentage-sign-grey-20.png in Resources */,
+				3A3CBF2E1C119F1F006E6D88 /* 1-stars-46x11.png in Resources */,
+				3A3CBF2F1C119F1F006E6D88 /* 2-stars-46x11.png in Resources */,
+				3A3CBF361C119F1F006E6D88 /* star-grey-20.png in Resources */,
 				3A7D6AB81C0D7E480081EA86 /* Assets.xcassets in Resources */,
-				3A7D6AFB1C1183DA0081EA86 /* 4-stars-46x11.png in Resources */,
-				3A7D6AFF1C1183DA0081EA86 /* settings-icon-20.png in Resources */,
-				3A7D6AFC1C1183DA0081EA86 /* 5-stars-60x11.png in Resources */,
-				3A7D6AB61C0D7E480081EA86 /* Main.storyboard in Resources */,
-				3A7D6AFD1C1183DA0081EA86 /* downArrow-grey-20.png in Resources */,
-				3A7D6AFA1C1183DA0081EA86 /* 3-stars-46x11.png in Resources */,
+				3AA1A7AB1C11A1FE005F11B2 /* Main.storyboard in Resources */,
+				3A3CBF311C119F1F006E6D88 /* 4-stars-46x11.png in Resources */,
+				3A3CBF351C119F1F006E6D88 /* settings-icon-20.png in Resources */,
+				3AA1A7AD1C11A220005F11B2 /* Info.plist in Resources */,
+				3A3CBF321C119F1F006E6D88 /* 5-stars-60x11.png in Resources */,
+				3A3CBF331C119F1F006E6D88 /* downArrow-grey-20.png in Resources */,
+				3A3CBF301C119F1F006E6D88 /* 3-stars-46x11.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,10 +190,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3A7D6AB41C0D7E480081EA86 /* Main.storyboard */ = {
+		3AA1A7A91C11A1FE005F11B2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3A7D6AB51C0D7E480081EA86 /* Base */,
+				3AA1A7AA1C11A1FE005F11B2 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -295,10 +288,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = FirstTipCalculator/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Faisal.FirstTipCalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = Faisal.TipCalculator;
 				PRODUCT_NAME = "Tip Calculator";
 				PROVISIONING_PROFILE = "";
 			};
@@ -310,10 +303,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = FirstTipCalculator/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Faisal.FirstTipCalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = Faisal.TipCalculator;
 				PRODUCT_NAME = "Tip Calculator";
 				PROVISIONING_PROFILE = "";
 			};
@@ -338,6 +331,7 @@
 				3A7D6AC11C0D7E480081EA86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

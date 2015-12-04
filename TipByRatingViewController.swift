@@ -64,6 +64,7 @@ class TipByRatingViewController: UIViewController {
         
         RatingSegmentedControl.selectedSegmentIndex = Int(defaultUserData.integerForKey("DefaultStarRating") - 1)
         updateReciept()
+        updateSatisfactoryEmoji()
     }
     
     func keyboardWillShow(notification: NSNotification) {
