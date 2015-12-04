@@ -1,6 +1,6 @@
 //
 //  TipByRatingViewController.swift
-//  FirstTipCalculator
+//  TipCalculator
 //
 //  Created by Faisal Abu Jabal on 12/2/15.
 //  Copyright © 2015 Faisal Abu Jabal. All rights reserved.

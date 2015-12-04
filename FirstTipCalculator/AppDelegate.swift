@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  FirstTipCalculator
+//  TipCalculator
 //
 //  Created by Faisal Abu Jabal on 12/1/15.
 //  Copyright © 2015 Faisal Abu Jabal. All rights reserved.
