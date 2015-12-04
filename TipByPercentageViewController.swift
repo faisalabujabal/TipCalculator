@@ -56,17 +56,15 @@ class TipByPercentageViewController: UIViewController {
             BillAmountValue.text = passedBillAmount
             BillAmountValue.placeholder = passedBillAmount
         }
-        
-        recieptBillAmountValue.text = String(Double(0).asLocaleCurrency)
-        recieptTipAmountValue.text = String(Double(0).asLocaleCurrency)
-        recieptTotalAmountValue.text = String(Double(0).asLocaleCurrency) + "/1 person"
-        
+
         let defaultTip = defaultUserData.objectForKey("DefaultTipByPercentage") as! Double?
         if(defaultTip == nil){
             setCurrentPercentage(18)
         } else {
             setCurrentPercentage(defaultTip!)
         }
+        
+        updateReceipt()
         
         let minimumSliderTip = defaultUserData.objectForKey("DefaultMinimumTipSlider") as! Double?
         if(minimumSliderTip == nil){
