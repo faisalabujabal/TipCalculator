@@ -1,25 +1,769 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wjS-fz-rtW">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tip Amount By Percentage-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Tip Amount By Percentage" id="BYZ-38-t0r" customClass="TipByPercentageViewController" customModule="Tip_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="WrapperContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AHK-fe-fZE" userLabel="BodyContainer">
+                                <rect key="frame" x="0.0" y="162" width="320" height="357"/>
+                                <subviews>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Q2x-D4-qjK" userLabel="NumberOfPeopleStepper">
+                                        <rect key="frame" x="210" y="289" width="94" height="29"/>
+                                        <animations/>
+                                        <connections>
+                                            <action selector="afterStepAmountChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="59n-2Y-Bo7"/>
+                                        </connections>
+                                    </stepper>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00 / 1 person" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="us8-BV-0ug" userLabel="ReceiptTotalValue">
+                                        <rect key="frame" x="68" y="254" width="236" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.99575320509999998" green="0.99575320509999998" blue="0.99575320509999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihb-Yd-K5f" userLabel="ReceiptTotalLabel">
+                                        <rect key="frame" x="14" y="254" width="39" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.97546073720000004" green="0.97546073720000004" blue="0.97546073720000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YDy-Pn-fjv" userLabel="RecipetSeperator">
+                                        <rect key="frame" x="14" y="237" width="290" height="2"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tip (18%):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6y-J6-5sq" userLabel="TipAmountLabel">
+                                        <rect key="frame" x="14" y="194" width="114" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.99032451919999998" green="0.99032451919999998" blue="0.99032451919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9J-QQ-57G" userLabel="TipAmountValue">
+                                        <rect key="frame" x="166" y="194" width="138" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UM8-6V-7sh" userLabel="ReceiptBillAmountLabel">
+                                        <rect key="frame" x="14" y="168" width="60" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1n-CI-zMW" userLabel="ReceiptBillAmountValue">
+                                        <rect key="frame" x="166" y="168" width="138" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="18" minValue="5" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="olj-em-iOb" userLabel="PercentageSlidebarBar">
+                                        <rect key="frame" x="17" y="111" width="284" height="31"/>
+                                        <animations/>
+                                        <connections>
+                                            <action selector="whileChangingSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="oNn-S9-d2f"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🙂" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsB-ws-rfp" userLabel="waiterSatisfactory">
+                                        <rect key="frame" x="210" y="37" width="55" height="60"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tip Percentage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48r-QK-6Fp" userLabel="TipPercentageLabel">
+                                        <rect key="frame" x="37" y="16" width="104" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="18%" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="K1C-bg-q4Q" userLabel="TipPercentageValue">
+                                        <rect key="frame" x="41" y="51" width="97" height="46"/>
+                                        <animations/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="AfterChangingBillAmount:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="G7c-BL-nW3"/>
+                                            <action selector="whileChangingPercentageAmount:" destination="BYZ-38-t0r" eventType="editingChanged" id="f8c-ap-Xkt"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.062745098039215685" green="0.27843137254901962" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="kce-08-MFF" appends="YES" id="KOz-E9-JOx"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kI-Px-59d" userLabel="HeaderContainer">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+                                <subviews>
+                                    <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FTl-Vn-1PR">
+                                        <rect key="frame" x="13" y="19" width="295" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Swipe Down to Dismiss Keyboard" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tq-rE-6Rv">
+                                                <rect key="frame" x="20" y="0.0" width="255" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.89908088235294126" green="0.89908088235294126" blue="0.89908088235294126" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="downArrow-grey-20.png" translatesAutoresizingMaskIntoConstraints="NO" id="wED-zH-x8M">
+                                                <rect key="frame" x="127" y="19" width="41" height="17"/>
+                                                <animations/>
+                                            </imageView>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$0.00" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LTJ-mZ-U14">
+                                        <rect key="frame" x="41" y="83" width="237" height="74"/>
+                                        <animations/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="AfterChangingBillAmount:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="e6k-PC-3ym"/>
+                                            <action selector="whileChaningBillAmount:" destination="BYZ-38-t0r" eventType="editingChanged" id="RHG-yf-ZP7"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bill Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yr5-iy-Tun">
+                                        <rect key="frame" x="109" y="54" width="103" height="32"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.15686274509803921" green="0.25490196078431371" blue="0.41960784313725491" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.96470588235294119" green="0.31372549019607843" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="AGc-og-diC" appends="YES" id="TwM-sB-I67"/>
+                            <outletCollection property="gestureRecognizers" destination="YrV-gf-cml" appends="YES" id="sGx-Fj-3Bg"/>
+                        </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Tip By Percentage" image="percentage-sign-grey-20.png" id="SMe-1o-ahG"/>
+                    <navigationItem key="navigationItem" id="83d-Kv-tQe"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="BillAmountValue" destination="LTJ-mZ-U14" id="eDj-yb-0Sb"/>
+                        <outlet property="PercentageAmountValue" destination="K1C-bg-q4Q" id="iVD-FF-lG8"/>
+                        <outlet property="SwipeDownToDismissImage" destination="wED-zH-x8M" id="KVx-77-gIg"/>
+                        <outlet property="SwipeDownToDismissLabel" destination="FTl-Vn-1PR" id="lHo-WH-mzT"/>
+                        <outlet property="recieptBillAmountValue" destination="x1n-CI-zMW" id="6F8-Vs-LwN"/>
+                        <outlet property="recieptSplitterStepper" destination="Q2x-D4-qjK" id="DN0-4O-gN6"/>
+                        <outlet property="recieptTipAmountLabel" destination="w6y-J6-5sq" id="SM3-Zf-gzY"/>
+                        <outlet property="recieptTipAmountValue" destination="V9J-QQ-57G" id="S8b-3i-9ZW"/>
+                        <outlet property="recieptTotalAmountValue" destination="us8-BV-0ug" id="3Nr-vf-xMG"/>
+                        <outlet property="satisfactoryEmoji" destination="bsB-ws-rfp" id="NKS-b0-ova"/>
+                        <outlet property="tipPercentageSlider" destination="olj-em-iOb" id="5xn-4Z-D2n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="AGc-og-diC">
+                    <connections>
+                        <action selector="onTapMain:" destination="BYZ-38-t0r" id="YOC-XS-dUK"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="YrV-gf-cml" userLabel="SwipingDown">
+                    <connections>
+                        <action selector="onTapMain:" destination="BYZ-38-t0r" id="voj-jT-7Du"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="kce-08-MFF" userLabel="SwipingLeft">
+                    <connections>
+                        <action selector="SwipingLeft:" destination="BYZ-38-t0r" id="ILg-S2-qJD"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-56" y="1013"/>
+        </scene>
+        <!--Tip By Rating-->
+        <scene sceneID="xBY-L9-wkZ">
+            <objects>
+                <viewController id="ph3-j9-WO4" customClass="TipByRatingViewController" customModule="Tip_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PSr-Xs-Mw2"/>
+                        <viewControllerLayoutGuide type="bottom" id="843-gY-CCF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kbf-m8-pc9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oGe-Ci-M6P" userLabel="BodyContainer">
+                                <rect key="frame" x="0.0" y="162" width="320" height="357"/>
+                                <subviews>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="FcJ-X4-uvz" userLabel="NumberOfPeopleStepper">
+                                        <rect key="frame" x="210" y="289" width="94" height="29"/>
+                                        <animations/>
+                                        <connections>
+                                            <action selector="AfterEditingStepper:" destination="ph3-j9-WO4" eventType="valueChanged" id="Zt3-Bc-7VE"/>
+                                            <action selector="afterStepAmountChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Cxa-aI-7VL"/>
+                                        </connections>
+                                    </stepper>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAC-LQ-eo8" userLabel="ReceiptTotalLabel">
+                                        <rect key="frame" x="14" y="254" width="43" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.97546073720000004" green="0.97546073720000004" blue="0.97546073720000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5uz-0w-kNF" userLabel="RecipetSeperator">
+                                        <rect key="frame" x="14" y="237" width="290" height="2"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tip (18%):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyX-TY-qLt" userLabel="TipAmountLabel">
+                                        <rect key="frame" x="14" y="194" width="114" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.99032451919999998" green="0.99032451919999998" blue="0.99032451919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJl-hA-2mP" userLabel="TipAmountValue">
+                                        <rect key="frame" x="166" y="194" width="138" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34X-Lb-eGk" userLabel="ReceiptBillAmountLabel">
+                                        <rect key="frame" x="14" y="168" width="60" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ry-HP-5gX" userLabel="ReceiptBillAmountValue">
+                                        <rect key="frame" x="166" y="168" width="138" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00 / 1 person" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwk-2D-o5w" userLabel="ReceiptTotalValue">
+                                        <rect key="frame" x="71" y="254" width="233" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.99575320509999998" green="0.99575320509999998" blue="0.99575320509999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rHS-zV-hZ6">
+                                        <rect key="frame" x="14" y="34" width="290" height="29"/>
+                                        <animations/>
+                                        <segments>
+                                            <segment title="" image="1-stars-46x11.png"/>
+                                            <segment title="" image="2-stars-46x11.png"/>
+                                            <segment title="" image="3-stars-46x11.png"/>
+                                            <segment title="" image="4-stars-46x11.png"/>
+                                            <segment title="" image="5-stars-60x11.png"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="AfterEditingSegmentedControl:" destination="ph3-j9-WO4" eventType="valueChanged" id="CPk-51-ReW"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🙂" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8w-Xe-aKU" userLabel="waiterSatisfactory">
+                                        <rect key="frame" x="133" y="90" width="55" height="60"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.062745098040000002" green="0.2784313725" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="kGE-IT-4ue" appends="YES" id="jgB-hC-UIj"/>
+                                    <outletCollection property="gestureRecognizers" destination="5V7-W9-GW4" appends="YES" id="dtZ-VF-0vV"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3le-yO-1GO" userLabel="HeaderContainer">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+                                <subviews>
+                                    <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h4B-e8-flc">
+                                        <rect key="frame" x="13" y="19" width="295" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Swipe Down to Dismiss Keyboard" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fnk-TE-WPy">
+                                                <rect key="frame" x="20" y="0.0" width="255" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.89908088239999995" green="0.89908088239999995" blue="0.89908088239999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="downArrow-grey-20.png" translatesAutoresizingMaskIntoConstraints="NO" id="kSi-Pe-QQ4">
+                                                <rect key="frame" x="127" y="19" width="41" height="17"/>
+                                                <animations/>
+                                            </imageView>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$0.00" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xbh-uD-Rs5">
+                                        <rect key="frame" x="41" y="83" width="237" height="74"/>
+                                        <animations/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="AfterChangingBillAmount:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="4nn-5W-SfC"/>
+                                            <action selector="AfterEditingBillAmountTextField:" destination="ph3-j9-WO4" eventType="editingDidEnd" id="Rck-Fm-YbZ"/>
+                                            <action selector="WhileEditingBillAmountTextField:" destination="ph3-j9-WO4" eventType="editingChanged" id="mIm-oa-pHv"/>
+                                            <action selector="whileChaningBillAmount:" destination="BYZ-38-t0r" eventType="editingChanged" id="p0Y-8E-4qI"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bill Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EU1-D5-kic">
+                                        <rect key="frame" x="109" y="54" width="103" height="32"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.15686274510000001" green="0.25490196079999999" blue="0.41960784309999999" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.96470588239999999" green="0.31372549020000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="95U-hS-0DG" appends="YES" id="Sgx-gn-004"/>
+                            <outletCollection property="gestureRecognizers" destination="3Ou-rj-mnn" appends="YES" id="glD-xd-4NQ"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tip By Rating" image="star-grey-20.png" id="dD6-10-7fw"/>
+                    <connections>
+                        <outlet property="BillAmountTextField" destination="xbh-uD-Rs5" id="zI9-wZ-kJ6"/>
+                        <outlet property="RatingSegmentedControl" destination="rHS-zV-hZ6" id="Z29-Av-yAA"/>
+                        <outlet property="ReceiptBillAmount" destination="4Ry-HP-5gX" id="Slz-Rt-fqb"/>
+                        <outlet property="ReceiptTipAmount" destination="fJl-hA-2mP" id="MPc-DC-tzz"/>
+                        <outlet property="RecieptStepper" destination="FcJ-X4-uvz" id="4y5-eE-NDd"/>
+                        <outlet property="RecieptTipAmountLabel" destination="uyX-TY-qLt" id="kyN-oc-Gxn"/>
+                        <outlet property="RecieptTotalAmount" destination="Dwk-2D-o5w" id="0rA-U9-tMb"/>
+                        <outlet property="SatisfactoryEmoji" destination="z8w-Xe-aKU" id="o6y-Ra-CjP"/>
+                        <outlet property="SwipeToDismissImage" destination="kSi-Pe-QQ4" id="RL5-tk-KQj"/>
+                        <outlet property="SwipeToDismissKeyboardLabel" destination="h4B-e8-flc" id="YeM-IS-pQj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j5H-zo-nOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="95U-hS-0DG">
+                    <connections>
+                        <action selector="OnTap:" destination="ph3-j9-WO4" id="g5d-1S-OB0"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="3Ou-rj-mnn" userLabel="SwipeDown">
+                    <connections>
+                        <action selector="OnTap:" destination="ph3-j9-WO4" id="vIh-BU-GIz"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="kGE-IT-4ue" userLabel="SwipeRight">
+                    <connections>
+                        <action selector="SwipingRight:" destination="ph3-j9-WO4" id="8Rn-F5-tCB"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="5V7-W9-GW4" userLabel="SwipeLeft">
+                    <connections>
+                        <action selector="SwipingLeft:" destination="ph3-j9-WO4" id="byb-2B-y14"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="379" y="1013"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="xzy-le-wa5">
+            <objects>
+                <tableViewController title="Settings" id="f3O-Ee-upT" customClass="SettingsViewController" customModule="Tip_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="50" sectionHeaderHeight="18" sectionFooterHeight="18" id="WG3-hd-lWt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <scrollView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="fgO-ci-dxT">
+                            <rect key="frame" x="0.0" y="610" width="320" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                        </scrollView>
+                        <sections>
+                            <tableViewSection id="8FB-pc-iUz">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="yGK-EO-6xu">
+                                        <rect key="frame" x="0.0" y="35" width="320" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yGK-EO-6xu" id="pC5-bH-ksd">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSd-7Z-ZEj">
+                                                    <rect key="frame" x="117" y="14" width="64" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Tip by Percentage Settings" id="Ilm-aU-eFn">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultPercentageCell" rowHeight="45" id="dPV-cf-0fc">
+                                        <rect key="frame" x="0.0" y="136" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dPV-cf-0fc" id="D7P-lf-ioW">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="18%" borderStyle="roundedRect" placeholder="18%" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nuy-cz-pNZ">
+                                                    <rect key="frame" x="215" y="7" width="97" height="30"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="AfterEditingDefaultTipTextField:" destination="f3O-Ee-upT" eventType="editingDidEnd" id="dNX-wP-eD8"/>
+                                                    </connections>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default Tip:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vb-tG-mzX">
+                                                    <rect key="frame" x="15" y="12" width="89" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultPercentageCell" rowHeight="46" id="rDt-QH-551">
+                                        <rect key="frame" x="0.0" y="181" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rDt-QH-551" id="mH8-5x-hjN">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default Tip Slider Minimum:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxL-Gh-hK6">
+                                                    <rect key="frame" x="15" y="12" width="206" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5%" borderStyle="roundedRect" placeholder="5%" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MP-st-tjd">
+                                                    <rect key="frame" x="215" y="7" width="97" height="30"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="AfterEditingDefaultTipTextField:" destination="f3O-Ee-upT" eventType="editingDidEnd" id="8sy-LU-hWz"/>
+                                                        <action selector="AfterEditingMinimumTipSlider:" destination="f3O-Ee-upT" eventType="editingDidEnd" id="byV-4e-0jb"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultPercentageCell" rowHeight="44" id="7Nm-4n-RLN">
+                                        <rect key="frame" x="0.0" y="227" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Nm-4n-RLN" id="9QZ-7d-mTq">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default Tip Slider Maximum:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M73-AA-EhY">
+                                                    <rect key="frame" x="15" y="12" width="211" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30%" borderStyle="roundedRect" placeholder="30%" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WQs-hK-Yic">
+                                                    <rect key="frame" x="215" y="7" width="97" height="30"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="AfterEditingDefaultTipTextField:" destination="f3O-Ee-upT" eventType="editingDidEnd" id="P3a-CM-Tjy"/>
+                                                        <action selector="AfterEditingMaximumTipSlider:" destination="f3O-Ee-upT" eventType="editingDidEnd" id="uBG-4x-mck"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Tip by Rating Settings" id="VPt-op-TAe">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultPercentageCell" rowHeight="45" id="1UO-oX-sFe" userLabel="TipByRatingCell">
+                                        <rect key="frame" x="0.0" y="322" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1UO-oX-sFe" id="VaR-ve-5J5">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default Star (1 .. 5)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgh-SN-6KP">
+                                                    <rect key="frame" x="15" y="12" width="143" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3" borderStyle="roundedRect" placeholder="3" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xnt-X1-J8z">
+                                                    <rect key="frame" x="215" y="7" width="97" height="30"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="AfterEditingDefualtStarTextField:" destination="f3O-Ee-upT" eventType="editingDidEnd" id="kWN-7E-UxP"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultPercentageCell" rowHeight="45" id="wQ4-Ip-A0y" userLabel="TipByRatingCell">
+                                        <rect key="frame" x="0.0" y="367" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wQ4-Ip-A0y" id="o9J-Ex-Q8B">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5%" borderStyle="roundedRect" placeholder="5%" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7he-z6-TkW">
+                                                    <rect key="frame" x="215" y="7" width="97" height="30"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="AfterEditingOneStarPercentageTextField:" destination="f3O-Ee-upT" eventType="editingDidEnd" id="N7h-cl-g23"/>
+                                                    </connections>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="One Star Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEl-31-81m">
+                                                    <rect key="frame" x="15" y="12" width="160" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultPercentageCell" rowHeight="45" id="lXA-SJ-BRG" userLabel="TipByRatingCell">
+                                        <rect key="frame" x="0.0" y="412" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lXA-SJ-BRG" id="LGy-lw-a39">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Two Stars Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXw-TW-tRT">
+                                                    <rect key="frame" x="15" y="12" width="168" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10%" borderStyle="roundedRect" placeholder="10%" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O31-U8-XUq">
+                                                    <rect key="frame" x="215" y="7" width="97" height="30"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="AfterEditingTwoStarsTextField:" destination="f3O-Ee-upT" eventType="editingDidEnd" id="1sq-9Q-1ds"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultPercentageCell" rowHeight="45" id="tUT-kT-U29" userLabel="TipByRatingCell">
+                                        <rect key="frame" x="0.0" y="457" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tUT-kT-U29" id="ozn-Sc-f68">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Three Stars Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSh-l2-OtJ">
+                                                    <rect key="frame" x="15" y="12" width="181" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15%" borderStyle="roundedRect" placeholder="15%" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H4F-tB-y5S">
+                                                    <rect key="frame" x="215" y="7" width="97" height="30"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="AfterEditingThreeStarsTextField:" destination="f3O-Ee-upT" eventType="editingDidEnd" id="4Mu-lB-arZ"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultPercentageCell" rowHeight="45" id="eGu-Fx-Bjg" userLabel="TipByRatingCell">
+                                        <rect key="frame" x="0.0" y="502" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eGu-Fx-Bjg" id="Ssp-EW-IQo">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Four Stars Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yqs-w7-ocW">
+                                                    <rect key="frame" x="15" y="12" width="171" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20%" borderStyle="roundedRect" placeholder="20%" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6HP-t0-u3o">
+                                                    <rect key="frame" x="215" y="7" width="97" height="30"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="AfterEditingFourStarsTextField:" destination="f3O-Ee-upT" eventType="editingDidEnd" id="Ndq-cv-qYv"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefaultPercentageCell" rowHeight="45" id="DOe-1x-kMc" userLabel="TipByRatingCell">
+                                        <rect key="frame" x="0.0" y="547" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DOe-1x-kMc" id="1Md-RD-8pG">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Five Stars Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeT-eT-BTc">
+                                                    <rect key="frame" x="15" y="12" width="167" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30%" borderStyle="roundedRect" placeholder="30%" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hfN-J2-Vtt">
+                                                    <rect key="frame" x="215" y="7" width="97" height="30"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="AfterEditingFiveStarsTextField:" destination="f3O-Ee-upT" eventType="editingDidEnd" id="ahH-IQ-9Rv"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="f3O-Ee-upT" id="yv8-iL-NBa"/>
+                            <outlet property="delegate" destination="f3O-Ee-upT" id="vNg-Pe-hnn"/>
+                            <outletCollection property="gestureRecognizers" destination="tza-Mj-DYW" appends="YES" id="T4d-bP-5Dp"/>
+                            <outletCollection property="gestureRecognizers" destination="Ira-qa-8de" appends="YES" id="cHS-bA-m7K"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings-icon-20.png" id="Yub-uk-nqo"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="DefaultStarTextField" destination="Xnt-X1-J8z" id="1Fr-Jo-I9I"/>
+                        <outlet property="DefaultTipByPercentageField" destination="nuy-cz-pNZ" id="OLE-ng-3rn"/>
+                        <outlet property="DefaultTipSliderMaximum" destination="WQs-hK-Yic" id="nPl-b0-Nyx"/>
+                        <outlet property="DefaultTipSliderMinimum" destination="9MP-st-tjd" id="L9W-ei-JOx"/>
+                        <outlet property="FiveStarsDefaultPercentageTextField" destination="hfN-J2-Vtt" id="fua-Xy-vFy"/>
+                        <outlet property="FourStarsDefaultPercentageTextField" destination="6HP-t0-u3o" id="o4n-R0-Jdx"/>
+                        <outlet property="OneStarDefaultPercentageTextField" destination="7he-z6-TkW" id="vCo-2Y-FgU"/>
+                        <outlet property="ThreeStarsDefaultPercentageTextField" destination="H4F-tB-y5S" id="Mfb-Pt-7GA"/>
+                        <outlet property="TwoStarsDefaultPercentageTextField" destination="O31-U8-XUq" id="CLx-y7-Jqa"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Kb-EQ-gv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Ira-qa-8de" userLabel="SwipingRight">
+                    <connections>
+                        <action selector="SwipingRight:" destination="f3O-Ee-upT" id="XIL-u9-bvG"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <tapGestureRecognizer id="tza-Mj-DYW">
+                    <connections>
+                        <action selector="OnTap:" destination="f3O-Ee-upT" id="PWh-g3-boK"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="775" y="1013"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="xYG-lF-Q74">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wjS-fz-rtW" customClass="TabBarController" customModule="Tip_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="fn5-uy-sKt">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="0YZ-Ut-eHQ"/>
+                        <segue destination="ph3-j9-WO4" kind="relationship" relationship="viewControllers" id="Shq-3y-f4W"/>
+                        <segue destination="f3O-Ee-upT" kind="relationship" relationship="viewControllers" id="xws-8v-9wu"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4cL-xs-YLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="387" y="285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1-stars-46x11.png" width="46" height="11"/>
+        <image name="2-stars-46x11.png" width="46" height="11"/>
+        <image name="3-stars-46x11.png" width="46" height="11"/>
+        <image name="4-stars-46x11.png" width="46" height="11"/>
+        <image name="5-stars-60x11.png" width="60" height="11"/>
+        <image name="downArrow-grey-20.png" width="20" height="12"/>
+        <image name="percentage-sign-grey-20.png" width="20" height="20"/>
+        <image name="settings-icon-20.png" width="20" height="20"/>
+        <image name="star-grey-20.png" width="20" height="19"/>
+    </resources>
 </document>

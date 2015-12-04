@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:FirstTipCalculator.xcodeproj">
+      location = "self:/Users/Faisal/Documents/iOS Apps/FirstTipCalculator/Tip Calculator.xcodeproj">
    </FileRef>
 </Workspace>
