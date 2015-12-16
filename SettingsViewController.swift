@@ -232,7 +232,18 @@ class SettingsViewController: UITableViewController {
     
     
     @IBAction func SwipingRight(sender: AnyObject) {
-        tabBarController?.selectedIndex = 1
+//        tabBarController?.selectedIndex = 1
+        let selectedIndex = 1
+        UIView.transitionFromView(self.view,
+            toView: tabBarController!.viewControllers![selectedIndex].view,
+            duration: 0.5,
+            options: UIViewAnimationOptions.TransitionFlipFromLeft,
+            completion: {
+                finished in
+                if finished {
+                    self.tabBarController!.selectedIndex = selectedIndex
+                }
+        })
     }
     
     // this function gets the current percentage rate as a double

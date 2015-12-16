@@ -23,7 +23,6 @@
 		3A7D6AD41C0FC6EF0081EA86 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D6AD31C0FC6EF0081EA86 /* SettingsViewController.swift */; };
 		3A7D6AEC1C1173B70081EA86 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D6AEB1C1173B70081EA86 /* TabBarController.swift */; };
 		3AA1A7AB1C11A1FE005F11B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1A7A91C11A1FE005F11B2 /* Main.storyboard */; };
-		3AA1A7AD1C11A220005F11B2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1A7AC1C11A220005F11B2 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,7 +124,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Faisal Abu Jabal";
 				TargetAttributes = {
 					3A7D6AAC1C0D7E470081EA86 = {
@@ -165,7 +164,6 @@
 				3AA1A7AB1C11A1FE005F11B2 /* Main.storyboard in Resources */,
 				3A3CBF311C119F1F006E6D88 /* 4-stars-46x11.png in Resources */,
 				3A3CBF351C119F1F006E6D88 /* settings-icon-20.png in Resources */,
-				3AA1A7AD1C11A220005F11B2 /* Info.plist in Resources */,
 				3A3CBF321C119F1F006E6D88 /* 5-stars-60x11.png in Resources */,
 				3A3CBF331C119F1F006E6D88 /* downArrow-grey-20.png in Resources */,
 				3A3CBF301C119F1F006E6D88 /* 3-stars-46x11.png in Resources */,
@@ -285,30 +283,30 @@
 		3A7D6AC01C0D7E480081EA86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Faisal.TipCalculator;
 				PRODUCT_NAME = "Tip Calculator";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		3A7D6AC11C0D7E480081EA86 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Faisal.TipCalculator;
 				PRODUCT_NAME = "Tip Calculator";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

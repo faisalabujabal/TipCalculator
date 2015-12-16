@@ -29,6 +29,35 @@ class TipByRatingViewController: UIViewController {
         super.viewDidLoad()
         // set the default values
         
+//        if(passedBillAmount != nil){
+//            BillAmountTextField.text = passedBillAmount!
+//            BillAmountTextField.placeholder = passedBillAmount!
+//            updateReciept()
+//        } else {
+//            BillAmountTextField.text = String(Double(0).asLocaleCurrency)
+//            BillAmountTextField.placeholder = String(Double(0).asLocaleCurrency)
+//        }
+//        ReceiptBillAmount.text = String(Double(0).asLocaleCurrency)
+//        RecieptTotalAmount.text = String(Double(0).asLocaleCurrency)
+//        RecieptTotalAmount.text = String(Double(0).asLocaleCurrency) + "/1 person"
+//        
+//        let currentDefaultStar = defaultUserData.objectForKey("DefaultStarRating") as! Int?
+//        if(currentDefaultStar != nil){
+//            RatingSegmentedControl.selectedSegmentIndex = currentDefaultStar! - 1
+//        } else {
+//            RatingSegmentedControl.selectedSegmentIndex = 2
+//            defaultUserData.setInteger(3, forKey: "DefaultStarRating")
+//            defaultUserData.synchronize()
+//        }
+//        updateSatisfactoryEmoji()
+//        
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         if(passedBillAmount != nil){
             BillAmountTextField.text = passedBillAmount!
             BillAmountTextField.placeholder = passedBillAmount!
@@ -53,10 +82,6 @@ class TipByRatingViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         
         if(passedBillAmount != nil){
             BillAmountTextField.text = passedBillAmount!
@@ -177,11 +202,33 @@ class TipByRatingViewController: UIViewController {
     }
     
     @IBAction func SwipingRight(sender: AnyObject) {
-        tabBarController?.selectedIndex = 0
+//        tabBarController?.selectedIndex = 0
+        let selectedIndex = 0
+        UIView.transitionFromView(self.view,
+            toView: tabBarController!.viewControllers![selectedIndex].view,
+            duration: 0.5,
+            options: UIViewAnimationOptions.TransitionFlipFromLeft,
+            completion: {
+                finished in
+                if finished {
+                    self.tabBarController!.selectedIndex = selectedIndex
+                }
+        })
     }
     
     @IBAction func SwipingLeft(sender: AnyObject) {
-        tabBarController?.selectedIndex = 2
+//        tabBarController?.selectedIndex = 2
+        let selectedIndex = 2
+        UIView.transitionFromView(self.view,
+            toView: tabBarController!.viewControllers![selectedIndex].view,
+            duration: 0.5,
+            options: UIViewAnimationOptions.TransitionFlipFromRight,
+            completion: {
+                finished in
+                if finished {
+                    self.tabBarController!.selectedIndex = selectedIndex
+                }
+        })
     }
     
 }

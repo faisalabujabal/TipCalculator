@@ -40,17 +40,24 @@ class TipByPercentageViewController: UIViewController {
         super.viewDidLoad()
         // set the bill amount value text field to become
         // first responder
-        SwipeDownToDismissImage.alpha = 0
-        SwipeDownToDismissLabel.alpha = 0
+//        SwipeDownToDismissImage.alpha = 0
+//        SwipeDownToDismissLabel.alpha = 0
         BillAmountValue.becomeFirstResponder()
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+//        
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        SwipeDownToDismissImage.alpha = 0
+        SwipeDownToDismissLabel.alpha = 0
+        // BillAmountValue.becomeFirstResponder()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         
         if(passedBillAmount != nil){
             BillAmountValue.text = passedBillAmount
@@ -103,7 +110,18 @@ class TipByPercentageViewController: UIViewController {
     
     
     @IBAction func SwipingLeft(sender: AnyObject) {
-        tabBarController?.selectedIndex = 1
+        // tabBarController?.selectedIndex = 1
+        let selectedIndex = 1
+        UIView.transitionFromView(self.view,
+            toView: tabBarController!.viewControllers![selectedIndex].view,
+            duration: 0.5,
+            options: UIViewAnimationOptions.TransitionFlipFromRight,
+            completion: {
+                finished in
+                if finished {
+                    self.tabBarController!.selectedIndex = selectedIndex
+                }
+        })
     }
     
     // this function is called when the user is chaning the bill amount
