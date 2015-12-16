@@ -23,7 +23,7 @@ The following **additional** features are implemented:
 
 - [yes] calculate the tip by percentage
 - [yes] a different view controller to calculate tip by the service rating
-- [yes] tab controller to handle 3 different view controllers
+- [yes] tab controller to handle 3 different view controllers with animations for swipping between them
 - [yes] the user can change the tip amount by using a slider or typing it manually
 - [yes] settings menu to handle the minimum and maximum values for the slider and the ability to change the the star rating          tip representation
 - [yes] A stepper that allows the user to split the tab into a cetain number of people
